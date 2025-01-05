@@ -59,3 +59,8 @@ footer {
     text-align: center;
     clear: both;
 }
+
+p {
+    text-align: justify;
+    text-justify: inter-word;     
+  }
