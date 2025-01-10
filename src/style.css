@@ -95,7 +95,7 @@ a {
 }
 
 footer {
-    background-color: #4d4d4d;
+    background-color: #272727;
     color: #ddd;
     padding: 10px;
     clear: both;
@@ -110,3 +110,12 @@ p {
     text-align: justify;
     text-justify: inter-word;
   }
+
+#rodape {
+  font-size: 13px;
+  
+}
+
+#rodape a {
+  color: #ddd;
+}
