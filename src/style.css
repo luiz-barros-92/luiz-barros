@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  background-color: #4d4d4d;   
+  background-color: #4d4d4d;
   padding: 10px;
 }
 
@@ -99,7 +99,7 @@ footer {
     color: #ddd;
     padding: 10px;
     clear: both;
-    margin-top: auto;  
+    margin-top: auto;
 }
 
 footer p {
@@ -113,7 +113,6 @@ p {
 
 #rodape {
   font-size: 13px;
-  
 }
 
 #rodape a {

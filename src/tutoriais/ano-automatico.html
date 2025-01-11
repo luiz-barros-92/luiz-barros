@@ -16,21 +16,21 @@
                 <li><a href="../projetos/projetos.html">Projetos</a></li>
                 <li><a href="tutoriais.html">Tutoriais</a></li>
                 <li><a href="../linux/linux.html">Linux</a></li>
-                <li><a href="../sobre/sobre.html">Sobre</a></li>                
+                <li><a href="../sobre/sobre.html">Sobre</a></li>
             </ul>
         </nav>
     </header>
-    <main>        
-        <section class="posts">                   
+    <main>
+        <section class="posts">
             <article>
-                <p>07/01/2025</p>                                     
+                <p>07/01/2025</p>
                 <h2>Programando o Ano Automático no Rodapé do Site</h2>                
                 <p>&emsp;&emsp;Existem muitos códigos abertos de sites estáticos na web. Porém, como sou teimoso, resolvi desenvolver <s>mal feito</s> o meu. Depois de dobrar o número de cabelos brancos na minha cabeça com a <s>des</s>organização de diretórios, conforme registrado nos <a href="https://github.com/luiz-barros-92/luiz-barros/commits/main/" target="_blank" rel="external">meus commits</a>, me vi com um desejo: quero o ano no rodapé do site.</p>
                 <p>&emsp;&emsp;Recém virado o ano, 2025 bem bonito lá embaixo, e quando chegar 2026? As minhas páginas são todas "cópias" do index com interior modificado para dar impressão de navegação no mesmo ambiente. Porém, hoje com meia dúzia de páginas é só ir uma a uma e editar o ano para 2026. Entretanto, conforme cresce o número de artigos, serão mais páginas para eu editar. Até que cheguei na técnica em JavaScript que utiliza a captura da data atual e retorna o ano extraído dela. Optei por utilizar o window.onload para chamar o script apenas no carregamento da página. Agora é só adicionar o seguinte código ao rodapé de cada página nova e está resolvido o problema:</p>
                 
                 <p>HTML</p>
-                <p><code>                          
-                &lt;span id="ano"&gt;&lt;/span&gt; LuizBarros                
+                <p><code>
+                &lt;span id="ano"&gt;&lt;/span&gt; LuizBarros
                 </code></p>
 
                 <p>JS</p>
@@ -42,7 +42,7 @@
 
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear" target="_blank" rel="external">Documentação Oficial Mozilla - getFullYear</a></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date" target="_blank" rel="external">Documentação Oficial Mozilla - Date</a></li>
-            </article>            
+            </article>
         </section>
     </main>
     <footer>
