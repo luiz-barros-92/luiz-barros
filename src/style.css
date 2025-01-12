@@ -40,16 +40,15 @@ header nav ul {
 
 @media (max-width: 480px){
   article {
-    max-width: 90vw;
-    padding: 1rem;
-    margin: 1rem auto;
+    max-width: 300px;
+    padding: 1rem;    
     word-wrap: break-word;
     overflow-wrap: break-word;
-    
+    box-sizing: border-box;    
   }
   p {
     text-align: justify;
-    font-size: 16px;
+    font-size: 14px;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -67,7 +66,7 @@ header nav ul {
     margin-bottom: 10px;
   }
   article {
-    max-width: 600px;
+    max-width: 300px;
     padding: 1.5rem;
   }
 }
@@ -96,9 +95,10 @@ article {
     color: #ddd;
     padding: 2rem;
     margin: 2rem auto;
-    max-width: 800px;
+    max-width: 900px;
     border: 1px solid #919191;
-    border-radius: 10px;    
+    border-radius: 10px;
+    box-sizing: border-box;
   }
 
 h2 {
