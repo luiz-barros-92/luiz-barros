@@ -38,6 +38,14 @@ header nav ul {
   gap: 10px;
 }
 
+@media (max-width: 480px){
+  article {
+    max-width: 90vw;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     padding: 5px;
