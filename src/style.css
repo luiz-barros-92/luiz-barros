@@ -5,11 +5,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #272727;
-    color: #ddd; }
+    background-color: #c5c5c5;
+    color: #000000; }
 
 header {
-  background-color: #4d4d4d;
+  background-color: #5a91f8;
   padding: 10px; }
 
 nav ul {
@@ -23,7 +23,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #ddd; }
+  color: #000000; }
 
 header nav ul {
   box-sizing: border-box;
@@ -77,11 +77,11 @@ main {
   align-items: center; }
 
 article {
-    color: #ddd;
+    color: #000000;
     padding: 2rem;
     margin: 2rem auto;
     max-width: 900px;
-    border: 1px solid #919191;
+    border: 1px solid #5a91f8;
     border-radius: 10px;
     box-sizing: border-box; }
 
@@ -91,11 +91,11 @@ h2 {
     text-align: center; }
 
 a {
-  color: burlywood; }
+  color: blue; }
 
 footer {
-    background-color: #272727;
-    color: #ddd;
+    background-color: #c5c5c5;
+    color: #000000;
     padding: 10px;
     clear: both;
     margin-top: auto; }
@@ -111,7 +111,7 @@ p {
   font-size: 13px; }
 
 #rodape a {
-  color: #ddd; }
+  color: #000000; }
 
 #neofetch {
   font-size: 11px; }
