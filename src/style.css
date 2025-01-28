@@ -91,7 +91,7 @@ h2 {
     text-align: center; }
 
 a {
-  color: blue; }
+  color: #2f4f7f; }
 
 footer {
     background-color: #c5c5c5;
@@ -115,3 +115,11 @@ p {
 
 #neofetch {
   font-size: 11px; }
+
+.destaque {
+  background-color: #c5c5c5;
+  padding: 20px;
+  border: 1px solid #5a91f8;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-sizing: border-box; }
