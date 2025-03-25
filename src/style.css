@@ -56,8 +56,7 @@ header nav ul {
     margin-bottom: 10px; }
   article {
     max-width: 300px;
-    padding: 1.5rem; }
-}
+    padding: 1.5rem; }}
 
 header nav ul li:first-child img {
   width: 30px;
@@ -116,13 +115,19 @@ p {
 #neofetch {
   font-size: 11px; }
 
+.destaque-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
 .destaque {
   background-color: #c5c5c5;
   padding: 20px;
   border: 1px solid #5a91f8;
-  margin: 2rem auto;
+  margin: 2rem 1rem;
   border-radius: 10px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  width: 250px; }
 
 #titulo {
   font-family: Pacifico, cursive;
@@ -148,3 +153,6 @@ img {
   height: auto;
   display: block;
   margin: 0 auto; }
+
+pre {
+  white-space: pre-wrap; }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <title>LuizBarros</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html"><img src="../img/terminal.png" alt="terminal"></a></li>
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="../projetos/projetos.html">Projetos</a></li>
+                <li><a href="desafios.html">Desafios</a></li>
+                <li><a href="../linux/linux.html">Linux</a></li>
+                <li><a href="../sobre/sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="posts">
+            <h1>Java</h1>
+            <article id="java1">
+                <p>25/03/2025</p>
+                <h3>Frase invertida</h3>
+                <p>&emsp;&emsp;Você deve pegar uma frase como "Dog bites man" e transformá-la em "man bites Dog".</p>
+                <details>
+                    <summary>Resolução</summary>
+                    <pre>
+                        <code>
+public class wordReversal {
+
+    public static void main(String[] args) {
+        String frase = "Dog bites man";
+        String[] palavras = frase.split(" ");
+
+    System.out.println(palavras[2] + " " + palavras[1] + " " + palavras[0]);
+    }
+}
+                        </code>
+                    </pre>
+                    <p>&emsp;&emsp;Criada a classe wordReversal, já declarando no método principal uma String 'frase' a ser analisada e um Array palavras recebendo frase.split(" ") como argumento um espaço em branco como limite de corte da String frase, formando assim um Array com cada palavra sendo endereçada de 0 a 2. Bastando agora fazer uma saída inversa de 2 até 0.</p>
+                    <p>Saída: </p>
+                    <code>man bites Dog</code>
+                </details>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p id="rodape"><span id="ano"></span> LuizBarros &emsp;<a href="https://github.com/luiz-barros-92" target="_blank" rel="external">GitHub</a>&emsp;<a href="https://www.linkedin.com/in/luiz-barros-2ba4b7342" target="_blank" rel="external">LinkedIn</a></p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
