@@ -31,7 +31,7 @@
                     <summary>Resolução</summary>
                     <pre>
                         <code>
-public class wordReversal {
+public class WordReversal {
 
     public static void main(String[] args) {
         String frase = "Dog bites man";
@@ -42,11 +42,62 @@ public class wordReversal {
 }
                         </code>
                     </pre>
-                    <p>&emsp;&emsp;Criada a classe wordReversal, já declarando no método principal uma String 'frase' a ser analisada e um Array palavras recebendo frase.split(" ") como argumento um espaço em branco como limite de corte da String frase, formando assim um Array com cada palavra sendo endereçada de 0 a 2. Bastando agora fazer uma saída inversa de 2 até 0.</p>
+                    <p>&emsp;&emsp;Criada a classe WordReversal, já declarando no método principal uma String 'frase' a ser analisada e um Array palavras recebendo frase.split(" ") como argumento um espaço em branco como limite de corte da String frase, formando assim um Array com cada palavra sendo endereçada de 0 a 2. Bastando agora fazer uma saída inversa de 2 até 0.</p>
                     <p>Saída: </p>
                     <code>man bites Dog</code>
                 </details>
+            </article>
+            <article id="java2">
+                <p>26/03/2025</p>
+                <h3>Soma de 5 valores inseridos pelo usuário</h3>
+                <p>&emsp;&emsp;Você deve permitir que o usuário digite 5 valores. O programa deve retornar a soma dos 5 valores informados.</p>
+                <details>
+                    <summary>Resolução</summary>
+                    <pre>
+                        <code>
+import java.util.Arrays;
+import java.util.Scanner;
 
+public class ArrayUnidimensional {
+
+    public static void main(String[] args) {
+        int [] num = new int[5];
+
+        System.out.println("---Digitando 5 valores---");
+        
+        Scanner valores = new Scanner(System.in);
+        
+        for (int c = 0; c < num.length; c++) {			
+            System.out.print("Digite o " + (c + 1) + "º valor: ");				
+            num[c] = valores.nextInt();
+        }
+        
+        valores.close();
+        
+        int soma = 0;
+        for (int i = 0; i < num.length; i++) {			
+            soma += num[i];
+        }
+                
+        System.out.println("A soma de " + Arrays.toString(num) + " é igual a " + soma + ".");
+    }
+}
+                        </code>
+                    </pre>
+                <p>&emsp;&emsp;Criado um array de 5 posições, Abrindo um Scanner para armazenar os dados inseridos pelo usuário. Optei por iniciar um laço de repetição que percorrerá todas as posições do array de 0 a 4, iterando cada valor inserido. Após a coleta, vamos ao tratamento dos dados, iniciando uma variável com valor 0 e dando inicio a outro laço de repetição agora realizando a soma iterativa novamente percorrendo todos os endereços do array de 0 a 4 e finalmente imprimindo a resposta ao usuário, utilizando também o método Arrays.toString() para otimizar a saída mostrando os valores digitados.</p>
+                <p>Saída:</p>
+                <code>
+                    <pre>
+---Digitando 5 valores---
+Digite o 1º valor: 1
+Digite o 2º valor: 2
+Digite o 3º valor: 3
+Digite o 4º valor: 4
+Digite o 5º valor: 5
+A soma de [1, 2, 3, 4, 5] é igual a 15.
+                    </pre>
+                </code>
+                </details>
             </article>
         </section>
     </main>
