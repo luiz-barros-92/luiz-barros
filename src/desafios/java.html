@@ -26,11 +26,11 @@
             <article id="java1">
                 <p>25/03/2025</p>
                 <h3>Frase invertida</h3>
-                <p>&emsp;&emsp;Você deve pegar uma frase como "Dog bites man" e transformá-la em "man bites Dog".</p>
+                <p>&emsp;&emsp;Você deve pegar uma frase como "Dog bites man" e invertê-la alterando a ordem das palavras, resultando em "man bites Dog".</p>
                 <details>
                     <summary>Resolução</summary>
-                    <pre>
-                        <code>
+                    <code>
+                        <pre>                        
 public class WordReversal {
 
     public static void main(String[] args) {
@@ -40,8 +40,9 @@ public class WordReversal {
     System.out.println(palavras[2] + " " + palavras[1] + " " + palavras[0]);
     }
 }
-                        </code>
-                    </pre>
+                        </pre>
+                    </code>
+                    
                     <p>&emsp;&emsp;Criada a classe WordReversal, já declarando no método principal uma String 'frase' a ser analisada e um Array palavras recebendo frase.split(" ") como argumento um espaço em branco como limite de corte da String frase, formando assim um Array com cada palavra sendo endereçada de 0 a 2. Bastando agora fazer uma saída inversa de 2 até 0.</p>
                     <p>Saída: </p>
                     <code>man bites Dog</code>
@@ -53,8 +54,8 @@ public class WordReversal {
                 <p>&emsp;&emsp;Você deve permitir que o usuário digite 5 valores. O programa deve retornar a soma dos 5 valores informados.</p>
                 <details>
                     <summary>Resolução</summary>
-                    <pre>
                         <code>
+                            <pre>                            
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -82,8 +83,8 @@ public class ArrayUnidimensional {
         System.out.println("A soma de " + Arrays.toString(num) + " é igual a " + soma + ".");
     }
 }
-                        </code>
-                    </pre>
+                            </pre>
+                        </code>                    
                 <p>&emsp;&emsp;Criado um array de 5 posições, Abrindo um Scanner para armazenar os dados inseridos pelo usuário. Optei por iniciar um laço de repetição que percorrerá todas as posições do array de 0 a 4, iterando cada valor inserido. Após a coleta, vamos ao tratamento dos dados, iniciando uma variável com valor 0 e dando inicio a outro laço de repetição agora realizando a soma iterativa novamente percorrendo todos os endereços do array de 0 a 4 e finalmente imprimindo a resposta ao usuário, utilizando também o método Arrays.toString() para otimizar a saída mostrando os valores digitados.</p>
                 <p>Saída:</p>
                 <code>
@@ -97,6 +98,89 @@ Digite o 5º valor: 5
 A soma de [1, 2, 3, 4, 5] é igual a 15.
                     </pre>
                 </code>
+                </details>
+            </article>
+            <article id="java3">
+                <p>26/03/2025</p>
+                <h3>Criando uma matriz 3x3 com dados do usuário e somando os valores</h3>
+                <p>Você deve pedir 9 múmeros para o usuário, em uma ordem de 3 linhas para 3 colunas, montando uma matriz 3x3, exibi-la em formato tabular e somar seus valores.</p>
+                <details>
+                    <summary>Resolução</summary>
+                    <code>
+                        <pre>
+import java.util.Scanner;
+
+public class ArrayBidimensional {
+
+    public static void main(String[] args) {
+        int [][] matriz = new int [3][3];
+        
+        System.out.println("----Inserindo 3 valores em 3 linhas----");
+        
+            Scanner valores = new Scanner(System.in);
+        
+        for (int i = 0 ; i < matriz.length; i++) {
+            System.out.println("Linha " + (i + 1));
+            
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print("Valor " + (j + 1) + ": ");
+                
+                matriz[i][j] = valores.nextInt();
+            }			
+        }
+        
+        valores.close();
+        
+        System.out.println("---Matriz no formato tabular---");
+                
+        for (int c = 0; c < matriz.length; c++) {
+            for (int d = 0; d < matriz[c].length; d++) {
+                System.out.print(matriz[c][d] + " ");
+            }
+            System.out.println();			
+        }
+        
+        int soma = 0;
+            for (int e = 0; e < matriz.length; e++) {
+                for (int f = 0; f < matriz[e].length; f++) {
+                    soma += matriz[e][f];
+                }
+            }
+        System.out.println("Soma dos elementos da matriz = " + soma);
+
+    }
+}
+                        </pre>
+                    </code>
+                    <p>Para solucionar esse desafio eu dividi em três partes:</p>
+                    <ul>
+                        <li><p>Parte 1 - Criar a matriz 3x3 e fazer a coleta dos dados com Scanner. Utilizei a técnica de fazer dois laços de repetição indentados, para percorrer as linhas no primeiro e o segundo as colunas, armazenando os valores nas posições de 0 a 2 dos arrays de ambas dimensões.</p></li>
+                        <li><p>Parte 2 - Fazer a montagem da matriz no formato tabular 3x3, exatamente com a mesma técnica de coleta de informações, porém agora distribuindo os valores e adicionando uma quebra de linha ao final de cada saída do segundo laço para induzir a impressão do formato tabular.</p></li>
+                        <li><p>Parte 3 - Realizar a soma dos elementos, iniciando com uma declaração de variável valendo 0 e, mais uma vez, aplicando a técnica de percorrer todas as linhas e colunas com dois laços de repetição indentados. dessa vez ao satisfazer cada condição do segundo laço, realizar uma iteração dos valores armazenados nos endereços. E ao final imprimindo a soma.</p></li>
+                    </ul>
+                    <p>Saída:</p>
+                    <code>
+                        <pre>
+----Inserindo 3 valores em 3 linhas----
+Linha 1
+Valor 1: 1
+Valor 2: 2
+Valor 3: 3
+Linha 2
+Valor 1: 4
+Valor 2: 5
+Valor 3: 6
+Linha 3
+Valor 1: 7
+Valor 2: 8
+Valor 3: 9
+---Matriz no formato tabular---
+1 2 3 
+4 5 6 
+7 8 9 
+Soma dos elementos da matriz = 45
+                        </pre>
+                    </code>
                 </details>
             </article>
         </section>
