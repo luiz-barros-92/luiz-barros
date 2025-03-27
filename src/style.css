@@ -32,10 +32,10 @@ header nav ul {
   align-items: center;
   gap: 10px; }
 
-@media (max-width: 480px){
+@media (max-width: 300px){
   article {
     width: 80%;
-    max-width: 300px;
+    max-width: 400px;
     padding: 1rem;    
     word-wrap: break-word;
     overflow-wrap: break-word;
