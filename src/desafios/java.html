@@ -243,6 +243,65 @@ A frase possui 5 palavras! Digite um número entre 1 e 5
                     </code>
                 </details>
             </article>
+            <article id="java5">
+                <p>27/03/2025</p>
+                <h3>Buscador</h3>
+                <p>&emsp;&emsp;Você deve fazer um programa que busque o que foi digitado pelo usuário em um texto que você vai definir e retorne a quantidade de termos encontrados.</p>
+                <details>
+                    <summary>Resolução</summary>
+                    <code>
+                        <pre>
+import java.util.Scanner;
+
+public class WordSearch2 {
+
+	public static void main(String[] args) {
+		String frase = "Esse texto será utilizado para fazer a varredura de quantidades de texto iguais . Para tanto , o texto é esse";
+		
+		String [] fracionado = frase.split(" ");		
+		
+		System.out.print("Buscar no texto: ");
+		Scanner busca = new Scanner(System.in);
+		
+		String pesquisa = busca.nextLine().trim();
+		
+		busca.close();
+		
+		int contador = 0;
+		for (int i = 0; i < fracionado.length; i++) {
+			if (pesquisa.equalsIgnoreCase(fracionado[i])) {
+				contador++;
+			}
+		}
+		
+		if (contador == 1) {
+			System.out.println("O termo '" + pesquisa + "' foi encontrado " + contador + " vez.");
+		}else if (contador > 1) {
+			System.out.println("O termo '" + pesquisa + "' foi encontrado " + contador + " vezes.");
+		}else {
+			System.out.println("O termo '" + pesquisa + "' não foi encontrado.");
+		}
+	}
+}
+                        </pre>
+                    </code>
+                    <p>Essa solução eu separei em alguns passos:</p>
+                    <ul>
+                        <li><p>1º Passo - Determinar a String que será analisada pelo programa e transformá-la em Array.</p></li>
+                        <li><p>2º Passo - Abrir um Scanner para que o usuário digite o termo que ele deseja buscar e armazená-lo com o método trim() para remover quaisquer espaços em branco digitados antes ou depois do termo pesquisado.</p></li>
+                        <li><p>3º Passo - Iniciar a variável contador igual a 0, e em um laço de repetição que percorrerá todos os endereços armazenados Array, vai ignorar as letras maiúsculas e realizará a iteração de soma do contador.</p></li>
+                        <li><p>4º Passo - Por fim, a saída em forma de estrutura condicional onde vai retornar um texto para 1 termo, outro para mais do que 1 e outro para termo não encontrado.</p></li>
+                    </ul>
+                    <p>Saída:</p>
+                    <code>
+                        <pre>
+Buscar no texto: texto
+O termo 'texto' foi encontrado 3 vezes.
+                        </pre>
+                    </code>
+                    <p>&emsp;&emsp;Uma possível melhoria nesse código seria ignorar pontuações coladas nas palavras (vírgula, ponto. "aspas" (parênteses), etc.), pois tive que afastar na String analisada para rodar o programa corretamente. E também ignorar os acentos porque apenas termos digitados com acentuação correta que entram na busca.</p>
+                </details>
+            </article>
         </section>
     </main>
     <footer>
