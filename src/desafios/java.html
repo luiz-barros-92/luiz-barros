@@ -183,6 +183,66 @@ Soma dos elementos da matriz = 45
                     </code>
                 </details>
             </article>
+            <article id="java4">
+                <p>27/03/2025</p>
+                <h3>Encontre a palavra pela posição</h3>
+                <p>Você deve permitir que o usuário digite uma frase e em seguida peça qual a palavra ele quer que o programa retorne através da posição dela. Exemplo: 'quero café'. Posição 2 retornará 'café'.</p>
+                <details>
+                    <summary>Resolução</summary>
+                    <code>
+                        <pre>
+import java.util.Scanner;
+
+public class FindWord {
+
+	public static void main(String[] args) {
+		System.out.print("Digite uma frase: ");		
+		Scanner frase = new Scanner(System.in);
+		String entrada = frase.nextLine();
+		
+		String[] fracionado = entrada.split(" ");		
+		
+		System.out.print("Mostrar a palavra nº: ");		
+		Scanner escolha = new Scanner(System.in);		
+		int numero = escolha.nextInt() - 1;
+
+		frase.close();
+		escolha.close();
+		
+		if(numero >= 0 && numero < fracionado.length) {
+			System.out.println("A palavra nº " + (numero + 1) + " é: " + fracionado[numero]);
+		} else {
+			System.out.println("A frase possui " + fracionado.length + " palavras! Digite um número entre 1 e " + fracionado.length);
+		}		
+	}
+}
+                        </pre>
+                    </code>
+                    <p>Para esta resolução, eu adotei quatro passos:</p>
+                    <ul>
+                        <li><p>1º Passo - Abrir um Scanner para armazenar e solicitar a entrada de uma String do usuário.</p></li>
+                        <li><p>2 º Passo - Criando um Array, convertendo a String inserida pelo usuário com o método split, passado como parâmetro um espaço vazio, delimitando o corte de cada palavra pelo espaço da frase, tornando cada palavra rastreável pelo programa.</p></li>
+                        <li><p>3 º Passo - Abrindo outro Scanner, dessa vez para que o usuário possa inserir qual a numeração da posição da palavra que ele deseja que o programa retorne. Com um detalhe a entrada que será um números partindo de 1 e a variável 'numero' já tratada para corresponder ao índice que se inicia com 0, portanto, recebendo o valor inserido - 1.</p></li>
+                        <li>4º Passo - Agora para a saída, fiz uma condição de caso o valor digitado seja menor ou igual a zero ou maior que a quantidade de palavras armazenadas no array, apresente uma mensagem de erro apresentando a quantidade de palavras existentes na frase.</li>
+                    </ul>
+                    <p>Saída:</p>
+                    <code>
+                        <pre>
+Digite uma frase: Digitei tudo errado
+Mostrar a palavra nº: 2
+A palavra nº 2 é: tudo
+                        </pre>
+                    </code>
+                    <p>Saída com tratamento de erro:</p>
+                    <code>
+                        <pre>
+Digite uma frase: Estudei Java o dia inteiro
+Mostrar a palavra nº: 8
+A frase possui 5 palavras! Digite um número entre 1 e 5
+                        </pre>
+                    </code>
+                </details>
+            </article>
         </section>
     </main>
     <footer>
