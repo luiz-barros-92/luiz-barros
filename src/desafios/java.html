@@ -195,34 +195,32 @@ import java.util.Scanner;
 
 public class FindWord {
 
-	public static void main(String[] args) {
-		System.out.print("Digite uma frase: ");		
-		Scanner frase = new Scanner(System.in);
-		String entrada = frase.nextLine();
-		
-		String[] fracionado = entrada.split(" ");		
-		
-		System.out.print("Mostrar a palavra nº: ");		
-		Scanner escolha = new Scanner(System.in);		
-		int numero = escolha.nextInt() - 1;
-
-		frase.close();
-		escolha.close();
-		
-		if(numero >= 0 && numero < fracionado.length) {
-			System.out.println("A palavra nº " + (numero + 1) + " é: " + fracionado[numero]);
-		} else {
-			System.out.println("A frase possui " + fracionado.length + " palavras! Digite um número entre 1 e " + fracionado.length);
-		}		
-	}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Digite uma frase: ");		
+        String entrada = sc.nextLine();		
+        String[] fracionado = entrada.split(" ");		
+        
+        System.out.print("Mostrar a palavra nº: ");				
+        int numero = sc.nextInt() - 1;	
+        
+        sc.close();
+        
+        if(numero >= 0 && numero < fracionado.length) {
+            System.out.println("A palavra nº " + (numero + 1) + " é: " + fracionado[numero]);
+        } else {
+            System.out.println("A frase possui " + fracionado.length + " palavras! Digite um número entre 1 e " + fracionado.length);
+        }		
+    }
 }
                         </pre>
                     </code>
                     <p>Para esta resolução, eu adotei quatro passos:</p>
                     <ul>
-                        <li><p>1º Passo - Abrir um Scanner para armazenar e solicitar a entrada de uma String do usuário.</p></li>
-                        <li><p>2 º Passo - Criando um Array, convertendo a String inserida pelo usuário com o método split, passado como parâmetro um espaço vazio, delimitando o corte de cada palavra pelo espaço da frase, tornando cada palavra rastreável pelo programa.</p></li>
-                        <li><p>3 º Passo - Abrindo outro Scanner, dessa vez para que o usuário possa inserir qual a numeração da posição da palavra que ele deseja que o programa retorne. Com um detalhe a entrada que será um números partindo de 1 e a variável 'numero' já tratada para corresponder ao índice que se inicia com 0, portanto, recebendo o valor inserido - 1.</p></li>
+                        <li><p>1º Passo - Abrir um Scanner para solicitar entradas de dados pelo usuário.</p></li>
+                        <li><p>2 º Passo - Solicitando e armazenando uma frase ao usuário. Criando um Array, convertendo a String inserida pelo usuário com o método split, passado como parâmetro um espaço vazio, delimitando o corte de cada palavra pelo espaço da frase, tornando cada palavra rastreável pelo programa.</p></li>
+                        <li><p>3 º Passo - Solicitando ao usuário a inserção de qual numeração da posição da palavra que ele deseja que o programa retorne. Com um detalhe, a entrada que será um números partindo de 1 e a variável 'numero' já tratada para corresponder ao índice que se inicia com 0, portanto, recebendo o valor inserido - 1.</p></li>
                         <li>4º Passo - Agora para a saída, fiz uma condição de caso o valor digitado seja menor ou igual a zero ou maior que a quantidade de palavras armazenadas no array, apresente uma mensagem de erro apresentando a quantidade de palavras existentes na frase.</li>
                     </ul>
                     <p>Saída:</p>
