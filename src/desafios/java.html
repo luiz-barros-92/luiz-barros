@@ -41,8 +41,7 @@ public class WordReversal {
     }
 }
                         </pre>
-                    </code>
-                    
+                    </code>                    
                     <p>&emsp;&emsp;Criada a classe WordReversal, já declarando no método principal uma String 'frase' a ser analisada e um Array palavras recebendo frase.split(" ") como argumento um espaço em branco como limite de corte da String frase, formando assim um Array com cada palavra sendo endereçada de 0 a 2. Bastando agora fazer uma saída inversa de 2 até 0.</p>
                     <p>Saída: </p>
                     <code>man bites Dog</code>
@@ -51,7 +50,7 @@ public class WordReversal {
             <article id="java2">
                 <p>26/03/2025</p>
                 <h3>Soma de 5 valores inseridos pelo usuário</h3>
-                <p>&emsp;&emsp;Você deve permitir que o usuário digite 5 valores. O programa deve retornar a soma dos 5 valores informados.</p>
+                <p>&emsp;&emsp;Você deve permitir que o usuário digite 5 valores. A saída do programa deve retornar a soma dos 5 valores informados.</p>
                 <details>
                     <summary>Resolução</summary>
                         <code>
@@ -298,6 +297,65 @@ O termo 'texto' foi encontrado 3 vezes.
                         </pre>
                     </code>
                     <p>&emsp;&emsp;Uma possível melhoria nesse código seria ignorar pontuações coladas nas palavras (vírgula, ponto. "aspas" (parênteses), etc.), pois tive que afastar na String analisada para rodar o programa corretamente. E também ignorar os acentos porque apenas termos digitados com acentuação correta que entram na busca.</p>
+                </details>
+            </article>
+            <article id="java6">
+                <p>30/03/2025</p>
+                <h3>Anagramas</h3>
+                <p>&emsp;&emsp;Você deve criar um programa que permita ao usuário digitar duas palavras, fazer a análise se elas são anagramas. Exemplo 'amor' tem as mesmas letras de 'Roma', portanto, são anagramas.</p>
+                <details>
+                    <summary>Resolução</summary>
+                    <code>
+                        <pre>
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Anagrams {
+
+	public static void main(String[] args) {
+		System.out.println("--Verifique se duas papalvras são anagramas--");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Primeira palavra: ");
+		String entrada1 = sc.nextLine().toLowerCase().trim();
+		String[] fracionado1 = entrada1.split("");
+				
+		System.out.print("Segunda palavra: ");
+		String entrada2 = sc.nextLine().toLowerCase().trim();
+		String[] fracionado2 = entrada2.split("");
+		
+		sc.close();
+		
+		Arrays.sort(fracionado1);
+		Arrays.sort(fracionado2);		
+		
+		if (Arrays.deepEquals(fracionado1, fracionado2)) {			
+			System.out.println(entrada1 + " e " + entrada2 + " são anagramas!");			
+		} else {			
+			System.out.println(entrada1 + " e " + entrada2 + " não são anagramas!");
+		}	
+	}
+}
+                        </pre>
+                    </code>
+                    <p>Passos para a resulução:</p>
+                    <ul>
+                        <li><p>1 - Abrir um Scanner para receber as entradas digitadas pelo usuário.</p></li>
+                        <li><p>2 - Solicitar ao usuário a digitação da primeira e segunda palavras, separadas. Cada uma delas utilizando os métodos <code>.toLowerCase()</code> para transformar todo o conteúdo digitado em letras minúsculas para a comparação, e <code>.trim()</code> para eliminar espaços vazios que possam ser digitados por engano.</p></li>
+                        <li><p>3 - Transformar o conteúdo da String em um Array com o método <code>.split("")</code> passando o parâmetro <code>("")</code> sem espaços, para o programa realizar o corte em cada caractere, para análise.</p></li>
+                        <li><p>4 - Utilizar o método <code>Arrays.sort()</code> para cada Array a fim de ordenar seus elementos.</p></li>
+                        <li><p>5 - Por fim uma estrutura condicional para controlar o fluxo de saída do programa, comparando os dois Arrays e indicando se as palavras são ou não anagramas.</p></li>
+                    </ul>
+                    <p>Saída:</p>
+                    <code>
+                        <pre>
+--Verifique se duas papalvras são anagramas--
+Primeira palavra: amor
+Segunda palavra: RomA
+amor e roma são anagramas!
+                        </pre>
+                    </code>
                 </details>
             </article>
         </section>
