@@ -302,7 +302,7 @@ O termo 'texto' foi encontrado 3 vezes.
             <article id="java6">
                 <p>30/03/2025</p>
                 <h3>Anagramas</h3>
-                <p>&emsp;&emsp;Você deve criar um programa que permita ao usuário digitar duas palavras, fazer a análise se elas são anagramas. Exemplo 'amor' tem as mesmas letras de 'Roma', portanto, são anagramas.</p>
+                <p>&emsp;&emsp;Você deve criar um programa que permita ao usuário digitar duas palavras e fazer a análise se elas são anagramas. Exemplo 'amor' tem as mesmas letras de 'Roma', portanto, são anagramas.</p>
                 <details>
                     <summary>Resolução</summary>
                     <code>
@@ -342,8 +342,8 @@ public class Anagrams {
                     <p>Passos para a resulução:</p>
                     <ul>
                         <li><p>1 - Abrir um Scanner para receber as entradas digitadas pelo usuário.</p></li>
-                        <li><p>2 - Solicitar ao usuário a digitação da primeira e segunda palavras, separadas. Cada uma delas utilizando os métodos <code>.toLowerCase()</code> para transformar todo o conteúdo digitado em letras minúsculas para a comparação, e <code>.trim()</code> para eliminar espaços vazios que possam ser digitados por engano.</p></li>
-                        <li><p>3 - Transformar o conteúdo da String em um Array com o método <code>.split("")</code> passando o parâmetro <code>("")</code> sem espaços, para o programa realizar o corte em cada caractere, para análise.</p></li>
+                        <li><p>2 - Solicitar ao usuário a digitação da primeira e segunda palavras, separadas. Cada uma delas utilizando os métodos <code>.toLowerCase()</code> para converter todo o conteúdo digitado em letras minúsculas para a comparação, e <code>.trim()</code> para eliminar espaços vazios que possam ser digitados por engano.</p></li>
+                        <li><p>3 - Converter o conteúdo da String em um Array com o método <code>.split("")</code> passando o parâmetro <code>("")</code> sem espaços, para o programa realizar o corte em cada caractere, para análise.</p></li>
                         <li><p>4 - Utilizar o método <code>Arrays.sort()</code> para cada Array a fim de ordenar seus elementos.</p></li>
                         <li><p>5 - Por fim uma estrutura condicional para controlar o fluxo de saída do programa, comparando os dois Arrays e indicando se as palavras são ou não anagramas.</p></li>
                     </ul>
