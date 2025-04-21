@@ -32,15 +32,158 @@
                 <summary>Resolução</summary>
                     <br><details>
                         <summary>Classe: Cliente</summary>
-                        <p>testeCliente</p>                                           
+                        <code>
+                            <pre>
+public class Cliente {
+    private String nome;
+    private String conta;
+    private String senha;
+    private double saldo;
+
+    public Cliente(String nome, String conta, String senha, double saldo) {
+        this.nome = nome;
+        this.conta = conta;
+        this.senha = senha;
+        this.saldo = saldo;
+    }    
+
+    public String getNome() {
+        return nome;
+    }
+    
+    public String getConta() {
+        return conta;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+    
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+    
+    public void depositar(double valor) {
+        this.setSaldo(this.getSaldo() + valor);
+        System.out.println(String.format("\nR$%.2f depositado com sucesso!", valor));
+    }
+    
+    public void sacar(double valor) {
+        if (this.getSaldo() >= valor){
+            this.setSaldo(this.getSaldo() - valor);
+            System.out.println(String.format("\nR$%.2f sacado com sucesso!", valor));
+        } else {
+            System.out.println("\nSaldo indisponível");
+        }
+    }
+    
+    public void verificarSaldo() {
+        System.out.println(String.format("\nSaldo atual: R$%.2f", this.getSaldo()));
+    }
+}
+                            </pre>
+                        </code>                                           
                     </details>
                     <br><details>
                         <summary>Classe: CaixaEletronico</summary>
-                        <p>testeCaixa</p>
+                        <code>
+                            <pre>
+import java.util.HashMap;
+import java.util.Map;
+
+public class CaixaEletronico {
+    private Map<String, Cliente> clientes;
+
+    public CaixaEletronico() {
+        this.clientes = new HashMap<>();
+        
+        clientes.put("123", new Cliente("Adriana", "123", "senha123", 1000.0));
+        clientes.put("456", new Cliente("Anselmo", "456", "senha456", 500.0));
+    }
+
+    public Cliente getCliente(String conta) {
+        return clientes.get(conta);
+    }
+}
+                            </pre>
+                        </code>
                     </details>
                     <br><details>
                         <summary>Classe: Main</summary>
-                        <p>testeMain</p>  
+                        <code>
+                            <pre>
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		CaixaEletronico caixa = new CaixaEletronico();
+		
+		System.out.println("----Bem vindo ao LuizBank!----");
+		System.out.println("------Acesse sua conta:-------");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Conta: ");
+		String conta = sc.nextLine();
+		
+		System.out.print("Senha: ");
+		String senha = sc.nextLine();		
+		
+		Cliente cliente = caixa.getCliente(conta);
+		
+		if (cliente != null && cliente.getSenha().equals(senha)) {
+			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!");			
+			
+			int acao;
+			
+			do {
+				System.out.println("\n------Menu------");
+				System.out.println("[1]Depositar\n[2]Sacar\n[3]Verificar o Saldo\n[0]Sair");
+				System.out.print("\nQual ação deseja executar? ");				
+				
+				acao = sc.nextInt();				
+				
+				switch (acao) {
+					case 1:
+						 System.out.print("Qual valor você deseja depositar? R$");
+					     double deposito = sc.nextDouble();
+					     cliente.depositar(deposito);					     
+					     break;
+					     
+					case 2:
+						System.out.print("Qual valor você deseja sacar? R$");
+						double saque = sc.nextDouble();
+						cliente.sacar(saque);
+						break;
+						
+					case 3:
+						cliente.verificarSaldo();
+						break;
+						
+					case 0:
+						System.out.println("Volte sempre, " + cliente.getNome() + "!");
+						break;
+						
+					default:
+		                System.out.println("Opção inválida. Tente novamente.");
+				}
+				
+			} while (acao != 0);			
+			
+			sc.close();
+			
+		} else {
+			System.out.println("Acesso Negado!");
+		}		
+	}
+}
+                            </pre>
+                        </code>
                     </details>
                 </details>
             </article>
