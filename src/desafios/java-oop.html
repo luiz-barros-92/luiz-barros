@@ -22,12 +22,18 @@
     </header>
     <main>
         <section class="posts">
-            <h1>Java OOP</h1>
-            <img src="../img/construction.png" alt="Em Construção">
+            <h1>Java OOP</h1>            
             <article id="javaOop1">
                 <p>12/04/2025</p>
                 <h3>Caixa Eletrônico</h3>                
                 <p>&emsp;&emsp;Você deve criar um sistema de caixa eletrônico que armazene a senha e conta do usuário, solicite o login e consiga fazer depósitos, saques e consulte o saldo</p>
+                <p>&emsp;&emsp;Requisitos:<br>
+                    <ul>
+                        <li>O programa deve usar um mapa para armazenar as contas e senhas.</li>
+                        <li>O programa deve ter um método para verificar se a conta e a senha estão corretas.</li>
+                        <li>O programa deve ter métodos para realizar as ações de depositar, sacar e verificar saldo.</li>
+                    </ul>
+                    </p>
                 <details>
                 <summary>Resolução</summary>
                     <br><details>
@@ -96,7 +102,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CaixaEletronico {
-    private Map<String, Cliente> clientes;
+    private Map&lt;String, Cliente&gt; clientes;
 
     public CaixaEletronico() {
         this.clientes = new HashMap<>();
@@ -185,6 +191,12 @@ public class Main {
                             </pre>
                         </code>
                     </details>
+                    <p>&emsp;&emsp;O programa foi dividido em três classes:</p>
+                    <ul>
+                        <li>Cliente - Onde será instanciado o objeto referente ao cliente, nome, conta, saldo e senha. E todos os métodos de sacar, depositar e ver extrato.</li>
+                        <li>Caixa Eletrônico - O construtor de CaixaEletronico inicializa um mapa de clientes pré definidos e a lógica para acessar os dados do cliente pela classe Main.</li>
+                        <li>Main - A sequência de interação com o usuário do programa. Optei por fazer um sistema de loop do-while e switch-case interno para que o programa se mantenha rodando até o cliente escolher a opção de sair. Enquanto isso ele pode sacar, depositar e pedir o extrato</li>
+                    </ul>
                 </details>
             </article>
         </section>
