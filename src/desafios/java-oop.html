@@ -193,10 +193,73 @@ public class Main {
                     </details>
                     <p>&emsp;&emsp;O programa foi dividido em três classes:</p>
                     <ul>
-                        <li>Cliente - Onde será instanciado o objeto referente ao cliente, nome, conta, saldo e senha. E todos os métodos de sacar, depositar e ver extrato.</li>
+                        <li>Cliente - Classe base para o objeto referente ao cliente, nome, conta, saldo e senha. E todos os métodos de sacar, depositar e ver extrato.</li>
                         <li>Caixa Eletrônico - O construtor de CaixaEletronico inicializa um mapa de clientes pré definidos e a lógica para acessar os dados do cliente pela classe Main.</li>
                         <li>Main - A sequência de interação com o usuário do programa. Optei por fazer um sistema de loop do-while e switch-case interno para que o programa se mantenha rodando até o cliente escolher a opção de sair. Enquanto isso ele pode sacar, depositar e pedir o extrato</li>
                     </ul>
+                </details>
+                <details>
+                    <summary>Saída</summary>
+                    <code>
+                        <pre>
+----Bem vindo ao LuizBank!----
+------Acesse sua conta:-------
+Conta: 456
+Senha: senha456
+Bem vindo(a) à sua conta, Anselmo!
+
+------Menu------
+[1]Depositar
+[2]Sacar
+[3]Verificar o Saldo
+[0]Sair
+
+Qual ação deseja executar? 1
+Qual valor você deseja depositar? R$50
+
+R$50.00 depositado com sucesso!
+
+------Menu------
+[1]Depositar
+[2]Sacar
+[3]Verificar o Saldo
+[0]Sair
+
+Qual ação deseja executar? 3
+
+Saldo atual: R$550.00
+
+------Menu------
+[1]Depositar
+[2]Sacar
+[3]Verificar o Saldo
+[0]Sair
+
+Qual ação deseja executar? 2
+Qual valor você deseja sacar? R$550
+
+R$550.00 sacado com sucesso!
+
+------Menu------
+[1]Depositar
+[2]Sacar
+[3]Verificar o Saldo
+[0]Sair
+
+Qual ação deseja executar? 3
+
+Saldo atual: R$0.00
+
+------Menu------
+[1]Depositar
+[2]Sacar
+[3]Verificar o Saldo
+[0]Sair
+
+Qual ação deseja executar? 0
+Volte sempre, Anselmo!
+                        </pre>
+                    </code>
                 </details>
             </article>
         </section>
