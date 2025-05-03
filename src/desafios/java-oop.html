@@ -198,6 +198,7 @@ public class Main {
                         <li>Main - A sequência de interação com o usuário do programa. Optei por fazer um sistema de loop do-while e switch-case interno para que o programa se mantenha rodando até o cliente escolher a opção de sair. Enquanto isso ele pode sacar, depositar e pedir o extrato</li>
                     </ul>
                 </details>
+                <br>
                 <details>
                     <summary>Saída</summary>
                     <code>
@@ -260,6 +261,59 @@ Qual ação deseja executar? 0
 Volte sempre, Anselmo!
                         </pre>
                     </code>
+                </details>
+            </article>
+            <article id="javaOop2">
+                <p>02/05/2025</p>
+                <h3>Buying Dollars</h3>
+                <p>&emsp;&emsp;Exercício de membros estáticos onde há uma constante IOF de 6% a ser acrescida na compra de dolares. O usuário deverá inserir o preço do dólar e a quantidade a ser comprada.</p>
+                <details>
+                    <summary>Resolução</summary>
+                    <br>
+                    <details>
+                        <summary>Class CurrencyConverter</summary>
+                        <code>
+                            <pre>
+public class CurrencyConverter {
+
+    public static final double IOF = 0.06;
+    
+    public static double calculateAmount(double price, double bought) {
+        return (price * bought) + (price * bought) * IOF;
+    }
+}
+                            </pre>
+                        </code>
+                    </details>
+                    <br>
+                    <details>
+                        <summary>Class Main</summary>
+                        <code>
+                            <pre>
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("What is the dollar price? ");
+		double dollarPrice = sc.nextDouble();
+		
+		System.out.print("How many dollars will be bought? ");
+		double bought = sc.nextDouble();
+		
+		double amount = CurrencyConverter.calculateAmount(dollarPrice, bought);
+		
+		System.out.printf("Amount to be paid in reais = %.2f", amount);
+		
+		sc.close();
+	}
+}                    
+                    </pre>
+                    </code>
+                </details>
+                <p>&emsp;&emsp;Exercício proposto para resolver utilizando membros estáticos. Toda a lógica do programa mantive encapsulada na Classe Currency Converter. E a classe Main faz a captura dos dados inseridos pelo usuário e uma chamada direta do método estático na variável 'amount'.</p>
                 </details>
             </article>
         </section>
