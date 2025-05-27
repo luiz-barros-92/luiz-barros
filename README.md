@@ -1,1 +1,1 @@
-Página pessoal, apresentação de projetos e contato
+Disabled page - last update 05/2025
